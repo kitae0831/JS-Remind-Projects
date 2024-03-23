@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,4 +39,70 @@ h2 {
 
 .form {
   padding: 30px 40px;
+}
+
+.form-control {
+  margin-left: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  color: #777;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  /* 해당 요소를 화면에서 보이지 않도록 하지만, 요소의 크기와 레이아웃은 유지됩니다.
+즉, 해당 요소가 아직 페이지 레이아웃에 공간을 차지하며, 다른 요소에 영향을 줍니다.
+마치 요소가 투명한 막으로 가려져 있는 것과 같은 효과를 줍니다. */
+  /* display: none; */
+  /* 해당 요소를 화면에서 숨깁니다.
+요소가 페이지 레이아웃에 공간을 차지하지 않습니다.
+따라서 해당 요소가 다른 요소에 영향을 주지 않으며, 레이아웃이 재조정됩니다. */
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
