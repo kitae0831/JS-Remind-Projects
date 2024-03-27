@@ -25,6 +25,8 @@ function isValidEmail(input) {
 }
 
 // Check required fields
+// 입력(input) 요소 배열을 받아와서 각 요소가 비어있는지 확인하고,
+// 비어있다면 오류 메시지를 표시합니다.
 function checkRequired(inputArr) {
   inputArr.forEach(function (input) {
     if (input.value.trim() === "") {
@@ -33,6 +35,23 @@ function checkRequired(inputArr) {
       showSuccess(input);
     }
   });
+}
+
+// Check input length
+function checkLength(input, min, max) {
+  if (input.value.length < min) {
+    showError(
+      input,
+      `${getFieldName(input)} must be at least ${min} characters`
+    );
+  } else if (input.value.length > max) {
+    showError(
+      input,
+      `${getFieldName(input)} must be less than ${max} characters`
+    );
+  } else {
+    showSuccess(input);
+  }
 }
 
 // Get fieldname
@@ -45,4 +64,6 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   checkRequired([username, email, password, password2]);
+  checkLength(username, 3, 15);
+  checkLength(password, 6, 25);
 });
