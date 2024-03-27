@@ -58,6 +58,13 @@ function checkLength(input, min, max) {
   }
 }
 
+// Check passwords match
+function checkPasswordsMatch(input1, input2) {
+  if (input1.value !== input2.value) {
+    showError(input2, "Password do not match");
+  }
+}
+
 // Get fieldname
 function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
@@ -71,5 +78,6 @@ form.addEventListener("submit", function (e) {
   checkLength(username, 3, 15);
   checkLength(password, 6, 25);
   checkEmail(email);
+  checkPasswordsMatch(password, password2);
 });
 // checkLength(username, 3, 15);: username 입력 필드의 길이를 확인하는 checkLength 함수를 호출합니다. 이 함수는 해당 필드의 길이가 최소 3자에서 최대 15자 사이에 있는지 확인하고, 그렇지 않은 경우 오류를 표시합니다.
