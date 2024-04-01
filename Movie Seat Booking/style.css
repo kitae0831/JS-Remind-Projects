@@ -39,3 +39,10 @@ body {
   /* appearance: 이는 표준 CSS 속성으로, 모든 브라우저에서 적용됩니다. 
     이 속성을 사용하면 요소의 기본적인 표현 방식을 지정할 수 있습니다. */
 }
+
+.seat {
+  background-color: #444451;
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+}
