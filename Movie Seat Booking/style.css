@@ -19,3 +19,23 @@ body {
 .movie-container {
   margin: 20px 0;
 }
+
+.movie-container select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  /* 웹 페이지의 요소들이 브라우저의 기본적인 표현 방식(appearance)을 
+  사용하는 대신에 사용자가 직접적으로 스타일을 지정할 수 있도록 해줍니다. */
+  /* -moz-appearance: 이는 Mozilla Firefox 브라우저에서 사용되는 CSS 속성입니다.
+   -moz- 접두사는 Mozilla Firefox에 특화된 속성을 지칭합니다. */
+  /* -webkit-appearance: 이는 웹킷(WebKit) 기반의 브라우저에서 사용되는 CSS 속성입니다. 
+    -webkit- 접두사는 Safari 및 구버전의 Chrome과 같은 웹킷 엔진을 사용하는 브라우저에서 특정한 스타일을 적용할 때 사용됩니다. */
+  /* appearance: 이는 표준 CSS 속성으로, 모든 브라우저에서 적용됩니다. 
+    이 속성을 사용하면 요소의 기본적인 표현 방식을 지정할 수 있습니다. */
+}
