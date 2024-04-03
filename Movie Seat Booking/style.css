@@ -40,6 +40,12 @@ body {
     이 속성을 사용하면 요소의 기본적인 표현 방식을 지정할 수 있습니다. */
 }
 
+.container {
+  perspective: 1000px;
+  /* 3D 변환을 적용할 때 원근감을 설정 */
+  margin-bottom: 30px;
+}
+
 .seat {
   background-color: #444451;
   height: 12px;
@@ -107,4 +113,12 @@ body {
   margin: 15px 0;
   transform: rotateX(-45deg);
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+p.text {
+  margin: 5px 0;
+}
+
+p.text span {
+  color: #6feaf6;
 }
