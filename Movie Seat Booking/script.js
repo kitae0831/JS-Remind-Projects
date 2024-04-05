@@ -12,6 +12,14 @@ let ticketPrice = +movieSelect.value;
 function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll(".row .seat.selected");
 
+  // Copy selected seats into arr
+  // Map through array
+  // return a new array indexes
+  // seats에 넘버링을 하도록 mapping하고 spread함
+  const seatsIndex = [...selectedSeats].map(function (seat) {
+    return [...seats].indexOf(seat);
+  });
+
   const selectedSeatsCount = selectedSeats.length;
 
   count.innerText = selectedSeatsCount;
