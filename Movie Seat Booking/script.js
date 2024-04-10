@@ -6,6 +6,8 @@ const count = document.getElementById("count");
 const total = document.getElementById("total");
 const movieSelect = document.getElementById("movie");
 
+populateUI();
+
 let ticketPrice = +movieSelect.value;
 
 // Save selected movie index and price
@@ -25,11 +27,32 @@ function updateSelectedCount() {
   const seatsIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
 
   localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
+  // 첫 번째 매개변수는 저장할 항목의 키. "selectedSeats"라는 키를 사용.
+  // 두 번째 매개변수는 저장할 데이터. 이 데이터를 문자열로 변환하기 위해 JSON.stringify() 함수를 사용. seatsIndex 배열은 JSON 문자열로 변환.
 
   const selectedSeatsCount = selectedSeats.length;
 
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
+}
+
+// Get data from localstorage and populate UI
+function populateUI() {
+  const selectedSeats = localStorage.getItem("seletedSeats");
+
+  if (selectedSeats !== null && selectedSeats.length > 0) {
+    seats.forEach((seat, index) => {
+      if (selectedSeats.index(index) > -1) {
+        seat.classList.add("selected");
+      }
+    });
+  }
+
+  const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");
+
+  if (selectedMovieIndex !== null) {
+    movieSelect.selectedIndex = selectedMovieIndex;
+  }
 }
 
 // Movie select event
@@ -51,3 +74,6 @@ container.addEventListener("click", (e) => {
     updateSelectedCount();
   }
 });
+
+//Initial count and total set
+updateSelectedCount();
