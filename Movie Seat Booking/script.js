@@ -42,7 +42,7 @@ function populateUI() {
 
   if (selectedSeats !== null && selectedSeats.length > 0) {
     seats.forEach((seat, index) => {
-      if (selectedSeats.index(index) > -1) {
+      if (selectedSeats.indexOf(index) > -1) {
         seat.classList.add("selected");
       }
     });
