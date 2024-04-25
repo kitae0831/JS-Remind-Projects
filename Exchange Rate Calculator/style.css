@@ -48,4 +48,13 @@ p {
 
 .currency select {
   padding: 10px 20px 10px 10px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #dedede;
+  font-size: 16px;
+  background: transparent;
+  background-position: right 10ox top 50%, 0, 0;
+  background-size: 12px auto, 100%;
+  background-repeat: no-repeat;
 }
