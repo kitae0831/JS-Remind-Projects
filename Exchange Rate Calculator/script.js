@@ -16,6 +16,8 @@ function caclulate() {
       const rate = data.rates[currencyEl_two];
 
       rateEl.innerTexst = `1 ${currencyEl_one} = ${rate} ${currencyEl_two}`;
+
+      amountEl_two.value = (amountEl_one.value * rate).toFixed(2);
     });
 }
 
@@ -24,5 +26,12 @@ currencyEl_one.addEventListener("change", caclulate);
 amountEl_one.addEventListener("input", caclulate);
 currencyEl_two.addEventListener("change", caclulate);
 amountEl_two.addEventListener("input", caclulate);
+
+swap.addEventListener("click", () => {
+  const temp = currencyEl_one.value;
+  currencyEl_one.value = currencyEl_two.value;
+  currencyEl_two.value = temp;
+  caclulate();
+});
 
 caclulate();
