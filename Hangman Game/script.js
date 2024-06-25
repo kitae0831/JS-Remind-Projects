@@ -13,3 +13,7 @@ let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const correctLetters = [];
 const wrongLetters = [];
+
+function displayWord() {}
+
+displayWord();
