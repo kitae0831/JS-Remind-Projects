@@ -36,7 +36,20 @@ function displayWord() {
 
 // Update the wrong letters
 function updateWrongLettersEl() {
-  console.log("Update wrong");
+  wrongLettersEl.innerHTML = `
+    ${wrongLetters.length > 0 ? "<p>Wrogn</p>" : ""}
+    ${wrongLetters.map((letter) => `<span>${letter}</spnan>`)}
+  `;
+
+  figureParts.forEach((part, index) => {
+    const errors = wrongLetters.length;
+
+    if (index < errors) {
+      part.style.display = "block";
+    } else {
+      part.style.display = "none";
+    }
+  });
 }
 
 function showNotification() {
