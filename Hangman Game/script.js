@@ -91,4 +91,17 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
+playAgainBtn.addEventListener("click", () => {
+  correctLetters.splice(0);
+  wrongLetters.splice(0);
+
+  selectedWord = words[Math.floor(Math.random()) * words.length];
+
+  displayWord();
+
+  updateWrongLettersEl();
+
+  popup.style.display = "none";
+});
+
 displayWord();
