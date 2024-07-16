@@ -48,6 +48,15 @@ function searchMeal(e) {
   }
 }
 
+// Fetch meal by ID
+function getMealById(mealID) {
+  fetch(`https://www.tehmealdb.com/api/json/v1/1/lookup.php?i=${meaID}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(Object);
+    });
+}
+
 // Event listeners
 submit.addEventListener("submit", searchMeal);
 
