@@ -33,3 +33,12 @@ function addTransactionDOM(transaction) {
 
   list.appendChild(tiem);
 }
+
+// Init app
+function init() {
+  list.innerHTML = "";
+
+  transactions.forEach(addTransactionDOM);
+}
+
+init();
