@@ -31,7 +31,14 @@ function addTransactionDOM(transaction) {
   )}</span> <button class="delete-btn">x</button>
   `;
 
-  list.appendChild(tiem);
+  list.appendChild(item);
+}
+
+// Update the balance, income and expense
+function updateValues() {
+  const amounts = transactions.map((transaction) => transaction.amount);
+
+  console.log(amounts);
 }
 
 // Init app
