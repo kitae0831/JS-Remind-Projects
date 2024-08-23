@@ -1,4 +1,4 @@
-const musicContainer = document.getElementById("music_container");
+const musicContainer = document.getElementById("music-container");
 const playBtn = document.getElementById("play");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
@@ -14,3 +14,33 @@ const songs = ["hey", "summer", "ukulele"];
 
 // Keep track of song
 let songIndex = 2;
+
+// Initially load song details into DOM
+loadSong(songs[songIndex]);
+
+// Update songs details
+function loadSong(song) {
+  title.innerText = song;
+  audio.src = `music/${song}.mp3`;
+  cover.src = `music/${song}.jpg`;
+}
+
+// Play song
+function playSong() {
+  musicContainer.classList.add("play");
+  playBtn.querySelector("i.fas").classList.remove("fa-play");
+  playBtn.querySelector("i.fas").classList.remove("fa-pause");
+
+  audio.play();
+}
+
+// Event listeners
+playBtn.addEventListener("click", () => {
+  const isPlaying = musicContainer.classList.contains("play");
+
+  if (isPlaying) {
+    pauseSong();
+  } else {
+    playSong();
+  }
+});
