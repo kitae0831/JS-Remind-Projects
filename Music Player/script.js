@@ -43,7 +43,7 @@ function pauseSong() {
   audio.pause();
 }
 
-// Previous song
+// Previous son
 function prevSong() {
   songIndex--;
 
