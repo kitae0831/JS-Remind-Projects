@@ -46,6 +46,16 @@ function showLoading() {
   }, 1000);
 }
 
+function filterPosts(e) {
+  const term = e.target.value.toUpperCase();
+  const posts = document.querySelectorAll(".posts");
+
+  posts.forEach((post) => {
+    const title = posts.querySelector(".post-title").innerText;
+    const body = posts.querySelector(".post-body").innerText;
+  });
+}
+
 showPosts();
 
 window.addEventListener("scroll", () => {
@@ -55,3 +65,5 @@ window.addEventListener("scroll", () => {
     showLoading();
   }
 });
+
+filter.addEventListener("input", filterPosts);
