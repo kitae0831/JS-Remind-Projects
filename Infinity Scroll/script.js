@@ -53,6 +53,12 @@ function filterPosts(e) {
   posts.forEach((post) => {
     const title = posts.querySelector(".post-title").innerText;
     const body = posts.querySelector(".post-body").innerText;
+
+    if (title.indexOf(term) > -1 || body.indexOf(term) > -1) {
+      post.style.display = "flex";
+    } else {
+      post.style.display = "none";
+    }
   });
 }
 
