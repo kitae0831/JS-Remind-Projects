@@ -44,3 +44,9 @@ let time = 10;
 function getRandomWrod() {
   return words[Math.floor(Math.random() * words.length)];
 }
+
+function addWordToDOM() {
+  randomWord = getRandomWrod();
+  word.innerHTML = randomWord;
+}
+addWordToDOM();
