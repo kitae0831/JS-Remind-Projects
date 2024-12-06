@@ -41,6 +41,10 @@ let score = 0;
 // Init time
 let time = 10;
 
+text.focus();
+
+const timeInterval = setInterval(updateTime, 1000);
+
 function getRandomWrod() {
   return words[Math.floor(Math.random() * words.length)];
 }
