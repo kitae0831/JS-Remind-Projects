@@ -88,5 +88,9 @@ text.addEventListener("input", (e) => {
     updateScore();
 
     e.target.value = "";
+
+    time += 2;
+
+    updateTime();
   }
 });
