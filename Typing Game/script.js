@@ -41,6 +41,8 @@ let score = 0;
 // Init time
 let time = 10;
 
+let difficulty = "medium";
+
 text.focus();
 
 const timeInterval = setInterval(updateTime, 1000);
@@ -93,4 +95,11 @@ text.addEventListener("input", (e) => {
 
     updateTime();
   }
+});
+
+settingsBtn.addEventListener("click", () => settings.classList.toggle("hide"));
+
+settingsForm.addEventListener("change", (e) => {
+  difficulty = e.target.value;
+  localStorage.setItem("difficulty", difficulty);
 });
