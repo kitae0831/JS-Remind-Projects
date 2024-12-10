@@ -47,6 +47,11 @@ let difficulty =
     ? localStorage.getItem("difficulty")
     : "mudium";
 
+difficultySelect.value =
+  localStorage.getItem("difficulty") !== null
+    ? localStorage.getItem("difficulty")
+    : "mudium";
+
 text.focus();
 
 const timeInterval = setInterval(updateTime, 1000);
@@ -95,8 +100,13 @@ text.addEventListener("input", (e) => {
 
     e.target.value = "";
 
+if(difficulty==='hard') {
     time += 2;
-
+} else if (difficulty==='medium') {
+    time += 3;
+} else {
+    time += 5
+}
     updateTime();
   }
 });
